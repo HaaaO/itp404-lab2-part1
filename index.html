@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+     <title> handlebars demo</title>
+     <link rel="stylesheet" type="text/css" href="loader.css" />
+</head>
+<body>
+
+  <div id ="results"></div>
+  <template id="results-template">
+  {{#each posts}}
+    <div class="post">
+      <p>Name: {{name}}</p>
+      <p>city: {{location}}</p>
+      <p>Yelp: <a href="{{yelpPage}}"  target="_blank"> check us out on yelp</a> </p>
+
+      <ul>
+          {{#each ownedBy}}
+          <li>{{ this }}</li>
+          {{/each}}
+      </ul>
+      {{#if acceptsApplePay}}
+      <img src="apple.jpg" alt="Italian Trulli" width="100">
+      {{else}}
+      <p>No Apple Pay</p>
+      {{/if}}
+
+
+    </div>
+  {{/each}}
+</template>
+  <script src="jquery-3.3.1.js"></script>
+  <script src="handlebars-v4.0.11.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
